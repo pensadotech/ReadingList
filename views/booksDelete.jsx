@@ -26,12 +26,13 @@ const DeletePage = () => {
 
             <div className="jumbotron">
               <h1 className="text-center"><i className="fas fa-book-open"></i> Reading List</h1>
-              <h2 className="text-center">Delete book</h2>
+              
               <hr />
               <div className="text-center">
                 <a href="/">
+                  <h2 className="text-center">Delete book</h2>
                   <button className="btn btn-lg btn-default">
-                    <span className="fa fa-home"></span>
+                    <span className="fa fa-home"></span> Home
                   </button>
                 </a>
               </div>

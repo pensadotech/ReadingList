@@ -64,8 +64,13 @@ const IndexPage = (props) => {
                     </div>
                     <div className="card-body">
                       <ul id="tableList" className="list-group">
-                        {props.bookshelfObj.bookCollection.map(bk =>
-                          <li key={bk.id}>{"Title: " + bk.title}</li>
+                        {props.bookshelfObj.bookCollection.map((bk, index) =>
+                          <li key={bk.id}>
+                            <h2> Book #:  {parseInt(index) + 1} </h2>
+                            <h5>Title: {bk.title}</h5>
+                            <p>genre: {bk.genre}</p>
+                            <p>Author: {bk.author}</p>
+                          </li>
                         )}
                       </ul>
                     </div>

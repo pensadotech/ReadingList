@@ -1,11 +1,13 @@
 
+// reference book shelf
+let bookShelf = require('../data/bookshelf');
 
 // API routes
 module.exports = function (app) {
 
   app.post('/create', (req, res) => {
-    restaurant.createReservation(req.body)
     console.log("post-create")
+    bookShelf.createBook(req.body); 
     res.sendStatus(200)
   })
 

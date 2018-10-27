@@ -2,11 +2,9 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+
+// Server variable 
 const app = express();
-
-// Initialize book shelf
-let bookShelf = require('./data/bookshelf');
-
 
 // JSX
 app.set('views', path.join(__dirname, 'views'));
@@ -22,11 +20,8 @@ app.use(bodyParser.urlencoded({
 // express middleware: capable to handle simple json
 app.use(bodyParser.json());
 
-bookShelf.initialize();
-// console.log(bookShelf.getBookShelfList())
-
 // jsx routes
-require("./routes/jsxRoutes")(app,bookShelf);
+require("./routes/jsxRoutes")(app);
 // api routes
 require("./routes/apiRoutes")(app)
 

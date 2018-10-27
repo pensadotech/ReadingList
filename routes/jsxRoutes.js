@@ -1,8 +1,10 @@
 
 
+// reference book shelf
+let bookShelf = require('../data/bookshelf');
 
 // Navigation routes
-module.exports = function (app,bookShelf) {
+module.exports = function (app) {
 
   app.get("/", (req, res) => {
     res.render("index", {bookshelfObj : bookShelf})
