@@ -105,9 +105,11 @@ var bookShelf = {
 
 
 // seed data for Bookshelf
-let seedBook1 = new Book(1, "book1", "general", "this is book #1", "John Doe", "2001", "2", "www.google.com");
+bookIdCount++;
+let seedBook1 = new Book(bookIdCount, "book1", "general", "this is book #1", "John Doe", "2001", "2", "www.google.com");
 bookShelf.bookCollection.push(seedBook1);
-let seedBook2 = new Book(1, "book2", "general", "this is book #2", "John Doe", "1820", "4", "www.google.com");
+bookIdCount++;
+let seedBook2 = new Book(bookIdCount, "book2", "general", "this is book #2", "John Doe", "1820", "4", "www.google.com");
 bookShelf.bookCollection.push(seedBook2);
 // let seedBook3  = new Book(1, "book3", "general", "this is book #3", "Susan Love", "1795", "4", "www.yahoo.com");
 // bookShelf.bookCollection.push(seedBook3);

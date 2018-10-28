@@ -35,3 +35,18 @@ body {
   .navButton {
     margin: 0px 10px 0px 0px;
   }
+
+  .sideButtons {
+    margin: 0px 3px 5px 0px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .bookCard {
+      background-color: lightgray;
+      margin: 0px 0px 10px 0px;: 
+  }
+
+  .btncol {
+    border: 2px solid red;
+  }

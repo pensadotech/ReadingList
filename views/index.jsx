@@ -31,13 +31,13 @@ const IndexPage = (props) => {
             <div className="jumbotron">
               <h1 className="text-center"><i className="fas fa-book-open"></i> Reading List</h1>
               <hr />
-              <div className="text-center">
+              <div className="text-left">
                 <a href="/create">
                   <button className="btn btn-lg btn-primary navButton">
-                    <span className="fas fa-plus-square"></span> Add
+                    <span className="fas fa-plus-square"></span> Add a book
                   </button>
                 </a>
-                <a href="/update">
+                {/* <a href="/update">
                   <button className="btn btn-lg btn-primary navButton">
                     <span className="fas fa-pencil-alt"></span> Update
                   </button>
@@ -46,7 +46,7 @@ const IndexPage = (props) => {
                   <button className="btn btn-lg btn-primary navButton">
                     <span className="fas fa-trash"></span> Delete
                   </button>
-                </a>
+                </a> */}
               </div>
               <br />
 
@@ -64,14 +64,35 @@ const IndexPage = (props) => {
                     </div>
                     <div className="card-body">
                       <ul id="tableList" className="list-group">
-                        {props.bookshelfObj.bookCollection.map((bk, index) =>
-                          <li key={bk.id}>
-                            <h2> Book #:  {parseInt(index) + 1} </h2>
-                            <h5>Title: {bk.title}</h5>
-                            <p>genre: {bk.genre}</p>
-                            <p>Author: {bk.author}</p>
-                          </li>
-                        )}
+
+                        {
+                          props.bookshelfObj.bookCollection.map((bk, index) =>
+                            <li key={bk.id}>
+                              <div className="row bookCard">
+                                <div className="col-sm-2">
+                                  <h5 className="card-title">Book # {parseInt(index) + 1}</h5>
+                                  <p>id#{bk.id}</p>
+                                </div>
+                                <div className="col-sm-8">
+                                  <div className="card-block">
+                                    <h3 className="card-title">{bk.title}</h3>
+                                    <h6 className="card-subtitle mb-2 text-muted">by {bk.author}</h6>
+                                    <p className="card-text">genre: {bk.genre}</p>
+                                    <p className="card-text">{bk.description}</p>
+                                  </div>
+                                </div>
+                                <div className="col-sm-2 btncol">
+                                  <a href="/update" className="btn btn-primary navButton sideButtons">
+                                     <span className="fas fa-pencil-alt"></span>
+                                  </a>
+                                  <a href="/delete" className="btn btn-primary navButton sideButtons">
+                                     <span className="fas fa-trash"></span>
+                                  </a>
+                                </div>
+                              </div>
+                            </li>
+                          )}
+
                       </ul>
                     </div>
                   </div>
