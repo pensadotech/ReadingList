@@ -22,36 +22,44 @@ const IndexPage = (props) => {
         </head>
         <body>
 
-          <header>
-
-          </header>
-
           <div className="container ">
 
-            <div className="jumbotron">
-              <h1 className="text-center"><i className="fas fa-book-open"></i> Reading List</h1>
-              <hr />
-              <div className="text-left">
-                <a href="/create">
-                  <button className="btn btn-lg btn-primary navButton">
-                    <span className="fas fa-plus-square"></span> Add a book
-                  </button>
-                </a>
-                {/* <a href="/update">
-                  <button className="btn btn-lg btn-primary navButton">
-                    <span className="fas fa-pencil-alt"></span> Update
-                  </button>
-                </a>
-                <a href="/delete">
-                  <button className="btn btn-lg btn-primary navButton">
-                    <span className="fas fa-trash"></span> Delete
-                  </button>
-                </a> */}
+            <div className="jumbotron text-center gradBlue">
+              <div className="row">
+                <div className="col-sm-4">
+                  <div className="logoHolder">
+                    <img className="img-fluid logoImage imgRnd10 imageShadow imageRotate"
+                      src="./images/knowledge.jpg"
+                      alt="Read list Logo" />
+                  </div>
+                </div>
+                <div className="col-sm-6">
+                  <h1 className="text-centered mainTitle">Reading List</h1>
+                  <hr />
+                  <div className="text-centered">              
+                    <a href="/create">
+                      <button className="btn btn-primary navButton">
+                        <span className="fas fa-plus-square"></span> Add
+                      </button>
+                    </a>
+                    <button id="btnEdit" type="submit" className="btn btn-primary navButton"
+                      data-toggle="tooltip" title="view">
+                      <span className="fas fa-edit"></span> Edit
+                    </button>
+                    <button id="btnDelete" type="submit" className="btn btn-primary navButton"
+                      data-toggle="tooltip" title="view">
+                      <span className="fas fa-trash"></span> Delete
+                    </button>
+                    <button id="btnView" type="submit" className="btn btn-primary navButton"
+                      data-toggle="tooltip" title="view">
+                      <span className="fas fa-book-open"></span> View
+                    </button>
+                    
+                  </div>
+                  <br />
+                </div>
               </div>
-              <br />
-
             </div>
-
 
             <div className="transparentBg">
 
@@ -59,16 +67,14 @@ const IndexPage = (props) => {
                 <div className="col-lg-12">
 
                   <div className="card">
-                    <div className="card-header">
-                      <h4>Book List</h4>
-                    </div>
+                    <div className="card-header"> <h4>Book List</h4></div>
                     <div className="card-body">
                       <ul id="tableList" className="list-group">
-
                         {
                           props.bookshelfObj.bookCollection.map((bk, index) =>
                             <li key={bk.id}>
-                              <div className="row bookCard">
+                              <div className="row bookCardList solidBg">
+
                                 <div className="col-sm-2">
                                   <h5 className="card-title">Book # {parseInt(index) + 1}</h5>
                                   <p>id#{bk.id}</p>
@@ -76,18 +82,19 @@ const IndexPage = (props) => {
                                 <div className="col-sm-8">
                                   <div className="card-block">
                                     <h3 className="card-title">{bk.title}</h3>
-                                    <h6 className="card-subtitle mb-2 text-muted">by {bk.author}</h6>
-                                    <p className="card-text">genre: {bk.genre}</p>
+                                    <h6 className="card-subtitle mb-2 text-muted">
+                                      by {bk.author} - Year: {bk.year}, Genre: {bk.genre}, Rate: {bk.rate}, ISBN: {bk.isbn}
+                                    </h6>
                                     <p className="card-text">{bk.description}</p>
                                   </div>
                                 </div>
-                                <div className="col-sm-2 btncol">
-                                  <a href="/update" className="btn btn-primary navButton sideButtons">
-                                     <span className="fas fa-pencil-alt"></span>
-                                  </a>
-                                  <a href="/delete" className="btn btn-primary navButton sideButtons">
-                                     <span className="fas fa-trash"></span>
-                                  </a>
+                                <div className="col-sm-2">
+                                  <div className="form-check">
+                                    <label className="form-check-label">
+                                      <label htmlFor="form-check-input">Select</label>
+                                      <input type="checkbox" className="form-check-input" data-value={bk.id} />
+                                    </label>
+                                  </div>
                                 </div>
                               </div>
                             </li>
@@ -97,17 +104,15 @@ const IndexPage = (props) => {
                     </div>
                   </div>
 
-
                 </div>
               </div>
 
             </div>
 
-
-
-
-
           </div>
+
+          <script src="./scripts/library.js" />
+          <script src="./scripts/index.js" />
 
         </body>
       </html>

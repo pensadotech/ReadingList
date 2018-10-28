@@ -28,7 +28,7 @@ const UpdatePage = () => {
               <h1 className="text-center"><i className="fas fa-book-open"></i> Reading List</h1>
               <hr />
               <div className="text-center">
-              <h2 className="text-center">Update book</h2>
+                <h2 className="text-center">Update book</h2>
                 <a href="/">
                   <button className="btn btn-lg btn-default">
                     <span className="fa fa-home"></span> Home
@@ -43,7 +43,7 @@ const UpdatePage = () => {
               <div className="row">
                 <div className="col-lg-12">
 
-<div className="card">
+                  <div className="card">
                     <div className="card-header">
                       Table Reservation
                   </div>

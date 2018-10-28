@@ -4,7 +4,13 @@ let bookShelf = require('../data/bookshelf');
 
 // API routes
 module.exports = function (app) {
-
+  
+  app.post('/view', (req, res) => {
+    book = bookShelf.findBookById(req.body.bookid)
+    bookShelf.selectedBook = book;
+    res.sendStatus(200)
+  });
+  
   app.post('/create', (req, res) => {
     console.log("post-create")
     bookShelf.createBook(req.body); 

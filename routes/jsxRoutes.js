@@ -10,6 +10,10 @@ module.exports = function (app) {
     res.render("index", {bookshelfObj : bookShelf})
   });
 
+  app.get("/view", (req, res) => {
+    res.render("booksView",{bookshelfObj : bookShelf})
+  });
+  
   app.get("/create", (req, res) => {
     res.render("booksCreate")
   });
