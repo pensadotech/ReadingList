@@ -36,7 +36,7 @@ const IndexPage = (props) => {
                 <div className="col-sm-6">
                   <h1 className="text-centered mainTitle">Reading List</h1>
                   <hr />
-                  <div className="text-centered">              
+                  <div className="text-centered">
                     <a href="/create">
                       <button className="btn btn-primary navButton">
                         <span className="fas fa-plus-square"></span> Add
@@ -54,7 +54,7 @@ const IndexPage = (props) => {
                       data-toggle="tooltip" title="view">
                       <span className="fas fa-book-open"></span> View
                     </button>
-                    
+
                   </div>
                   <br />
                 </div>
@@ -72,9 +72,8 @@ const IndexPage = (props) => {
                       <ul id="tableList" className="list-group">
                         {
                           props.bookshelfObj.bookCollection.map((bk, index) =>
-                            <li key={bk.id}>
+                            <div >
                               <div className="row bookCardList solidBg">
-
                                 <div className="col-sm-2">
                                   <h5 className="card-title">Book # {parseInt(index) + 1}</h5>
                                   <p>id#{bk.id}</p>
@@ -83,21 +82,23 @@ const IndexPage = (props) => {
                                   <div className="card-block">
                                     <h3 className="card-title">{bk.title}</h3>
                                     <h6 className="card-subtitle mb-2 text-muted">
-                                      by {bk.author} - Year: {bk.year}, Genre: {bk.genre}, Rate: {bk.rate}, ISBN: {bk.isbn}
+                                      by {bk.author} - Year: {bk.year}, Genre: {bk.genre} 
                                     </h6>
+                                    <p className="card-subtitle mb-2 text-muted">Rate: {bk.rate}, ISBN: {bk.isbn}, @page: {bk.pageNumber}</p>
                                     <p className="card-text">{bk.description}</p>
+                                    <br/>
                                   </div>
                                 </div>
                                 <div className="col-sm-2">
                                   <div className="form-check">
-                                    <label className="form-check-label">
-                                      <label htmlFor="form-check-input">Select</label>
-                                      <input type="checkbox" className="form-check-input" data-value={bk.id} />
-                                    </label>
+                                    <input type="checkbox" className="form-check-input item-selection" data-value={bk.id} />
+                                    <label htmlFor="form-check-input">Select</label>
                                   </div>
                                 </div>
                               </div>
-                            </li>
+                            </div>
+
+
                           )}
 
                       </ul>
@@ -111,6 +112,13 @@ const IndexPage = (props) => {
 
           </div>
 
+
+          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossOrigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossOrigin="anonymous"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossOrigin="anonymous"></script>
           <script src="./scripts/library.js" />
           <script src="./scripts/index.js" />
 

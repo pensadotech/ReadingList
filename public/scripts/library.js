@@ -2,7 +2,7 @@
 // Functions ----------------------------------------------------------
 function getFirstSelectedBook() {
     // get all check boxes
-    let books = document.getElementsByClassName("form-check-input");
+    let books = document.getElementsByClassName("item-selection");
     let selectedBookid = undefined;
     // Find the first check box that is selected
     for (let i = 0; i < books.length; i++) {
@@ -17,7 +17,7 @@ function getFirstSelectedBook() {
   
   function getAllSelectedBooks() {
     // get all check boxes
-    let books = document.getElementsByClassName("form-check-input");
+    let books = document.getElementsByClassName("item-selection");
     let selectedBookidArr = [];
     // collect all selected
     for (let i = 0; i < books.length; i++) {
