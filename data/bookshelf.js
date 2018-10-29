@@ -2,7 +2,7 @@
 let bookIdCount = 0;
 
 // Book object
-function Book(id, title, genre, description, author, year, isbn, rate, url, pageNumber, comments) {
+function Book(id, title, genre, description, author, year, rate, isbn, url, pageNumber, comments) {
   // properties
   this.id = id;
   this.title = title;
@@ -13,14 +13,12 @@ function Book(id, title, genre, description, author, year, isbn, rate, url, page
   this.rate = rate;
   this.isbn = isbn;
   this.url = url;
-  this.pageNumber = 0;
-  this.comments = '';
   this.pageNumber = pageNumber;
   this.comments = comments;
 }
 
 // Function prototypes for Book
-Book.prototype.updateBook = function (title, genre, description, author, year, rate, isbn, url, pageNumber, comments) {
+Book.prototype.saveBookData = function (title, genre, description, author, year, rate, isbn, url, pageNumber, comments) {
   this.title = title;
   this.genre = genre;
   this.description = description;
@@ -71,21 +69,22 @@ var bookShelf = {
     // find book
     let book = this.findBookById(bk.id);
     // update book
-    book.updateBook(bk.title, bk.genre, bk.description, bk.author, bk.year, bk.rate, bk.isbn, bk.url, bk.pageNumber, bk.comments);
+    book.saveBookData(bk.title, bk.genre, bk.description, bk.author, bk.year, bk.rate, bk.isbn, bk.url, bk.pageNumber, bk.comments);
   },
   deleteBook(bkId) {
-    let pos = this.findBookPosition(bkId);
+    let pos = this.findBookPositionById(bkId);
+    // remove fron list
     if (pos > -1) {
-      this.bookCollection.slice(pos);
+      this.bookCollection.splice(pos,1);
     }
   },
   //Functions 
   findBookPositionById(bkId) {
     let position = -1;
     // look for target friend by name
-    for (let i = 0; i < this.bookShelf.length; i++) {
-      let book = this.bookShelf[i];
-      if (book.id === bkId) {
+    for (let i = 0; i < this.bookCollection.length; i++) {
+      let book = this.bookCollection[i];
+      if (parseInt(book.id) === parseInt(bkId)) {
         position = i;
         break;
       }
@@ -119,12 +118,12 @@ var bookShelf = {
 // seed data for Bookshelf
 // book #1
 bookIdCount++;
-let seedBook1 = new Book(bookIdCount, "book1", "general", "this is a large explanation about book #1", "John Doe", "2001", "2", "1234", "www.google.com", 3, "");
+let seedBook1 = new Book(bookIdCount, "book1", "general", "this is a large explanation about book #1", "John Doe", "2001", "4", "123-132",  "www.google.com", 3, "");
 seedBook1.updateComment("This is a personal comment on book#1");
 bookShelf.bookCollection.push(seedBook1);
 // book #2
 bookIdCount++;
-let seedBook2 = new Book(bookIdCount, "book2", "general", "this is a large explanation about is book #2", "John Doe", "1820", "4", "1234", "www.google.com", 45,"");
+let seedBook2 = new Book(bookIdCount, "book2", "general", "this is a large explanation about is book #2", "John Doe", "1820", "3", "435-234", "www.google.com", 45,"");
 seedBook2.updateComment("This is a personal comment on book#2");
 bookShelf.bookCollection.push(seedBook2);
 

@@ -24,7 +24,7 @@ const CreatePage = () => {
 
           <div className="container">
 
-           <div className="jumbotron text-center gradBlue">
+            <div className="jumbotron text-center gradBlue">
               <div className="row">
                 <div className="col-sm-4">
                   <div className="logoHolder">
@@ -36,10 +36,10 @@ const CreatePage = () => {
                 <div className="col-sm-6">
                   <h1 className="text-centered mainTitle">Reading List</h1>
                   <hr />
-                  <div className="text-centered">              
+                  <div className="text-centered">
                     <a href="/">
                       <button className="btn btn-primary navButton">
-                      <span className="fa fa-home"></span> Home
+                        <span className="fa fa-home"></span> Home
                       </button>
                     </a>
                   </div>
@@ -58,64 +58,64 @@ const CreatePage = () => {
                       <form role="form">
                         <div className="form-group">
                           <label htmlFor="book-title">Title</label>
-                          <input type="text" className="form-control" id="book-title" 
+                          <input type="text" className="form-control" id="book-title"
                             placeholder="Book title..." />
                         </div>
                         <div className="form-group">
                           <label htmlFor="book-author">Author</label>
-                          <input type="text" className="form-control" id="book-author" 
-                            placeholder="Book author..."  />
+                          <input type="text" className="form-control" id="book-author"
+                            placeholder="Book author..." />
                         </div>
                         <div className="form-group">
                           <label htmlFor="book-year">Year</label>
-                          <input type="text" className="form-control" id="book-year" 
+                          <input type="text" className="form-control" id="book-year"
                             placeholder="Year the book was published..." />
                         </div>
                         <div className="form-group">
                           <label htmlFor="book-genre">Genre</label>
-                          <input type="text" className="form-control" id="book-genre" 
-                           placeholder="Book genre..." />
+                          <input type="text" className="form-control" id="book-genre"
+                            placeholder="Book genre..." />
                         </div>
                         <div className="form-group">
                           <label htmlFor="book-rate">Rate (1-5)</label>
-                          <input type="text" className="form-control" id="book-rate" 
-                             placeholder="Book rate..." />
+                          <input type="text" className="form-control" id="book-rate"
+                            placeholder="Book rate..." />
+                        </div>
+                        <div className="form-group">
+                          <label htmlFor="book-rate">ISBN</label>
+                          <input type="text" className="form-control" id="book-isbn"
+                            placeholder="Book ISBN..." />
                         </div>
                         <div className="form-group">
                           <label htmlFor="book-description">Description</label>
-                          <textarea type="text" className="form-control" id="book-description" 
-                             placeholder="Book brief description..." maxLength="100" cols="30" rows="3"/>
+                          <textarea type="text" className="form-control" id="book-description"
+                            placeholder="Book brief description..." maxLength="100" cols="30" rows="3" />
                         </div>
                         <div className="form-group">
                           <label htmlFor="book-url">Url</label>
-                          <input type="text" className="form-control" id="book-url" 
-                             placeholder="Refrence URL..."/>
+                          <input type="text" className="form-control" id="book-url"
+                            placeholder="Refrence URL..." />
                         </div>
 
-                        <br/>
-                        
+                        <br />
+
                         <div className="form-group">
                           <label htmlFor="book-lastpage">LastPage read </label>
-                          <input type="text" className="form-control" id="book-lastpage" 
-                            placeholder="Last page read from book..."/>
+                          <input type="text" className="form-control" id="book-lastpage"
+                            placeholder="Last page read from book..." />
                         </div>
                         <div className="form-group">
                           <label htmlFor="book-comment">Personal comment</label>
-                          <textarea type="text" className="form-control" id="book-comment"  
-                             placeholder="Personal comments..." maxLength="100" cols="30" rows="3"/>
+                          <textarea type="text" className="form-control" id="book-comment"
+                            placeholder="Personal comments..." maxLength="100" cols="30" rows="3" />
                         </div>
 
-                        <button id="btnAddBook" type="submit" className="btn btn-primary">Save book</button>
-
-                    {/* //     <button id="btnView" type="submit" className="btn btn-primary navButton"
-                    //   data-toggle="tooltip" title="view">
-                    //   <span className="fas fa-book-open"></span> View
-                    // </button> */}
+                        <button id="btnAddBook" type="submit" className="btn btn-primary">Add book</button>
 
                       </form>
                     </div>
                   </div>
-                  
+
 
                 </div>
               </div>
@@ -123,7 +123,7 @@ const CreatePage = () => {
 
           </div>
 
-           <script src="./scripts/library.js" />
+          <script src="./scripts/library.js" />
           <script src="./scripts/bookCreate.js" />
 
         </body>

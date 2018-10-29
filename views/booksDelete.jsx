@@ -1,7 +1,8 @@
 const React = require('react');
 const Fragment = React.Fragment;
+const HeaderChild = require('./components/headerChild');
 
-const DeletePage = () => {
+const DeletePage = (props) => {
   return (
     <Fragment>
       <html lang="en">
@@ -23,32 +24,122 @@ const DeletePage = () => {
         <body>
 
           <div className="container">
-
-            <div className="jumbotron">
-              <h1 className="text-center"><i className="fas fa-book-open"></i> Reading List</h1>
-              
-              <hr />
-              <div className="text-center">
-                <a href="/">
-                  <h2 className="text-center">Delete book</h2>
-                  <button className="btn btn-lg btn-default">
-                    <span className="fa fa-home"></span> Home
-                  </button>
-                </a>
-              </div>
-              <br />
-
-            </div>
+            
+            <HeaderChild />
 
             <div className="transparentBg">
               <div className="row">
                 <div className="col-lg-12">
+
+                  <div className="card">
+                    <div className="card-header"> <h4>Delete book?</h4> </div>
+                    <div className="card-body">
+                      <div className="bookCardHead">
+                        <div className="row">
+                          <div className="col-sm-2 bookCardSectionLabel">
+                            <p className="card-text">Title :</p>
+                          </div>
+                          <div className="col-sm-10">
+                            {<h4 id="book-title" className="card-title" 
+                                 data-value= {props.bookshelfObj.selectedBook.id}>
+                                {props.bookshelfObj.selectedBook.title}
+                            </h4>}
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-sm-2 bookCardSectionLabel">
+                            <p className="card-subtitle">Author :</p>
+                          </div>
+                          <div className="col-sm-10">
+                            {<h6 className="card-subtitle text-muted">{props.bookshelfObj.selectedBook.author}</h6>}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="bookCardData">
+                        <div className="row">
+                          <div className="col-sm-2 bookCardSectionLabel">
+                            <p className="card-text">Year :</p>
+                          </div>
+                          <div className="col-sm-2 bookCardSectionData">
+                            {<p className="card-text">{props.bookshelfObj.selectedBook.year} </p>}
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-sm-2 bookCardSectionLabel">
+                            <p className="card-text">Genre :</p>
+                          </div>
+                          <div className="col-sm-2 bookCardSectionData">
+                            {<p className="card-text">{props.bookshelfObj.selectedBook.genre} </p>}
+                          </div>
+                        </div>
+                        <div className="row ">
+                          <div className="col-sm-2 bookCardSectionLabel">
+                            <p className="card-text">Rate :</p>
+                          </div>
+                          <div className="col-sm-8 bookCardSectionData">
+                            <p className="card-text">{props.bookshelfObj.selectedBook.rate}</p>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-sm-2 bookCardSectionLabel">
+                            <p className="card-text">ISBN :</p>
+                          </div>
+                          <div className="col-sm-8 bookCardSectionData">
+                            {<p className="card-text">{props.bookshelfObj.selectedBook.isbn} </p>}
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-sm-2 bookCardSectionLabel">
+                            <p className="card-text">Descr :</p>
+                          </div>
+                          <div className="col-sm-8 bookCardSectionData">
+                            {<p className="card-text">{props.bookshelfObj.selectedBook.description} </p>}
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-sm-2 bookCardSectionLabel">
+                            <p className="card-text">URL :</p>
+                          </div>
+                          <div className="col-sm-8 bookCardSectionData">
+                            {<a href={props.bookshelfObj.selectedBook.url}>{props.bookshelfObj.selectedBook.url}</a>}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="bookCardData">
+                        <div className="row">
+                          <div className="col-sm-2 bookCardSectionLabel">
+                            <p className="card-text">LastPage read :</p>
+                          </div>
+                          <div className="col-sm-8 bookCardSectionData">
+                            {<p className="card-text">{props.bookshelfObj.selectedBook.pageNumber} </p>}
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-sm-2 bookCardSectionLabel">
+                            <p className="card-text">Comment :</p>
+                          </div>
+                          <div className="col-sm-8 bookCardSectionData">
+                            {<p className="card-text">{props.bookshelfObj.selectedBook.comments} </p>}
+                          </div>
+                        </div>
+                      </div>
+
+                      <button id="btnDeleteBook" type="submit" className="btn btn-primary">Delete book</button>
+
+                    </div>
+                  </div>
+
 
                 </div>
               </div>
             </div>
 
           </div>
+
+          <script src="./scripts/library.js" />
+          <script src="./scripts/bookDelete.js" />
 
         </body>
       </html>

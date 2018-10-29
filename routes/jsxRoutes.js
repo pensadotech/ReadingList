@@ -19,11 +19,11 @@ module.exports = function (app) {
   });
 
   app.get("/update", (req, res) => {
-    res.render("booksUpdate")
+    res.render("booksUpdate",{bookshelfObj : bookShelf})
   });
 
   app.get("/delete", (req, res) => {
-    res.render("booksDelete")
+    res.render("booksDelete",{bookshelfObj : bookShelf})
   });
 
 }

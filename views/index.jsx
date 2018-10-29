@@ -67,7 +67,7 @@ const IndexPage = (props) => {
                 <div className="col-lg-12">
 
                   <div className="card">
-                    <div className="card-header"> <h4>Book List</h4></div>
+                    <div className="card-header"> <h4>Book List</h4> ( except for add, select a boook before the action ) </div>
                     <div className="card-body">
                       <ul id="tableList" className="list-group">
                         {

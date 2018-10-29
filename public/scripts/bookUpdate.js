@@ -1,12 +1,13 @@
 const fetch = window.fetch;
 
 // Events -----------------------------------------------------------------------
-document.getElementById("btnAddBook").addEventListener('click', event => {
+document.getElementById("btnUpdateBook").addEventListener('click', event => {
   // override default behavior
   event.preventDefault();
   console.log("create book");
 
   // get data from screen
+  let bookId = document.querySelector('#book-title').getAttribute('data-value');
   let bookTitle = document.querySelector('#book-title').value.trim();
   let bookAuthor = document.querySelector('#book-author').value.trim();
   let bookYear = document.querySelector('#book-year').value.trim();
@@ -19,12 +20,13 @@ document.getElementById("btnAddBook").addEventListener('click', event => {
   let bookComment = document.querySelector('#book-comment').value.trim();
 
   // save the screen entries 
-  fetch('/create', {
+  fetch('/update', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json; charset=utf-8'
       },
       body: JSON.stringify({
+        id : bookId,
         title: bookTitle,
         genre: bookGenre,
         description: bookDescr,

@@ -1,5 +1,6 @@
 const React = require('react');
 const Fragment = React.Fragment;
+const HeaderChild = require('./components/headerChild');
 
 const ViewPage = (props) => {
   return (
@@ -23,30 +24,8 @@ const ViewPage = (props) => {
         <body>
 
           <div className="container">
-             
-          <div className="jumbotron text-center gradBlue">
-              <div className="row">
-                <div className="col-sm-4">
-                  <div className="logoHolder">
-                    <img className="img-fluid logoImage imgRnd10 imageShadow imageRotate"
-                      src="./images/knowledge.jpg"
-                      alt="Read list Logo" />
-                  </div>
-                </div>
-                <div className="col-sm-6">
-                  <h1 className="text-centered mainTitle">Reading List</h1>
-                  <hr />
-                  <div className="text-centered">              
-                    <a href="/">
-                      <button className="btn btn-primary navButton">
-                      <span className="fa fa-home"></span> Home
-                      </button>
-                    </a>
-                  </div>
-                  <br />
-                </div>
-              </div>
-            </div>
+
+            <HeaderChild />
 
             <div className="transparentBg">
               <div className="row">
@@ -96,7 +75,7 @@ const ViewPage = (props) => {
                             <p className="card-text">Rate :</p>
                           </div>
                           <div className="col-sm-8 bookCardSectionData">
-                            <p className="card-text"> {props.bookshelfObj.selectedBook.rate}</p>
+                            <p className="card-text">{props.bookshelfObj.selectedBook.rate}</p>
                           </div>
                         </div>
                         <div className="row">
