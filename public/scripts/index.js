@@ -24,6 +24,8 @@ document.getElementById("btnView").addEventListener('click', event => {
       .catch(e => console.error(e))
   } else {
     console.log("please select a book!")
+    // show modal
+    $('#userWarningModal').modal('show')
   }
 })
 
@@ -50,6 +52,8 @@ document.getElementById("btnEdit").addEventListener('click', event => {
       .catch(e => console.error(e))
   } else {
     console.log("please select a book!")
+    // show modal
+    $('#userWarningModal').modal('show')
   }
 })
 
@@ -75,9 +79,10 @@ document.getElementById("btnDelete").addEventListener('click', event => {
       })
       .catch(e => console.error(e))
   } else {
-    console.log("please select a book!")
+    console.log("Please select a book!")
+    // show modal
+    $('#userWarningModal').modal('show')
   }
 })
 
 console.log("ping index.js")
-

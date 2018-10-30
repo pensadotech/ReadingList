@@ -126,7 +126,7 @@ const DeletePage = (props) => {
                         </div>
                       </div>
 
-                      <button id="btnDeleteBook" type="submit" className="btn btn-primary">Delete book</button>
+                      <button id="btnDeleteBook" type="submit" className="btn btn-danger">Delete book</button>
 
                     </div>
                   </div>

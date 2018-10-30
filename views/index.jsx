@@ -67,12 +67,13 @@ const IndexPage = (props) => {
                 <div className="col-lg-12">
 
                   <div className="card">
-                    <div className="card-header"> <h4>Book List</h4> ( except for add, select a boook before the action ) </div>
+                    <div className="card-header"> <h4>Book List</h4> </div>
                     <div className="card-body">
+
                       <ul id="tableList" className="list-group">
                         {
                           props.bookshelfObj.bookCollection.map((bk, index) =>
-                            <div >
+                            <div key={index}>
                               <div className="row bookCardList solidBg">
                                 <div className="col-sm-2">
                                   <h5 className="card-title">Book # {parseInt(index) + 1}</h5>
@@ -82,11 +83,11 @@ const IndexPage = (props) => {
                                   <div className="card-block">
                                     <h3 className="card-title">{bk.title}</h3>
                                     <h6 className="card-subtitle mb-2 text-muted">
-                                      by {bk.author} - Year: {bk.year}, Genre: {bk.genre} 
+                                      by {bk.author} - Year: {bk.year}, Genre: {bk.genre}
                                     </h6>
                                     <p className="card-subtitle mb-2 text-muted">Rate: {bk.rate}, ISBN: {bk.isbn}, @page: {bk.pageNumber}</p>
                                     <p className="card-text">{bk.description}</p>
-                                    <br/>
+                                    <br />
                                   </div>
                                 </div>
                                 <div className="col-sm-2">
@@ -97,8 +98,6 @@ const IndexPage = (props) => {
                                 </div>
                               </div>
                             </div>
-
-
                           )}
 
                       </ul>
@@ -108,6 +107,31 @@ const IndexPage = (props) => {
                 </div>
               </div>
 
+            </div>
+
+          </div>
+
+          <div className="container">
+
+            <div className="modal" id="userWarningModal">
+              <div className="modal-dialog">
+                <div className="modal-content">
+
+                  <div className="modal-header">
+                    <h4 className="modal-title">Select a book</h4>
+                    <button type="button" className="close" data-dismiss="modal">&times;</button>
+                  </div>
+
+                  <div className="modal-body">
+                     Use a checkbox to select a book before taking an action.
+                  </div>
+
+                  <div className="modal-footer">
+                    <button type="button" className="btn btn-primary" data-dismiss="modal">Close</button>
+                  </div>
+
+                </div>
+              </div>
             </div>
 
           </div>

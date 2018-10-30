@@ -75,7 +75,7 @@ var bookShelf = {
     let pos = this.findBookPositionById(bkId);
     // remove fron list
     if (pos > -1) {
-      this.bookCollection.splice(pos,1);
+      this.bookCollection.splice(pos, 1);
     }
   },
   //Functions 
@@ -116,15 +116,37 @@ var bookShelf = {
 }
 
 // seed data for Bookshelf
+// fields: id, title, genre, description, author, year, rate, isbn, url, pageNumber, comments
 // book #1
 bookIdCount++;
-let seedBook1 = new Book(bookIdCount, "book1", "general", "this is a large explanation about book #1", "John Doe", "2001", "4", "123-132",  "www.google.com", 3, "");
-seedBook1.updateComment("This is a personal comment on book#1");
+let seedBook1 = new Book(
+  bookIdCount,
+  "Makers, the new industrial revolution",
+  "Motivational",
+  "3D Robotics co-founder and bestselling author Chris Anderson takes you to the front lines of a new industrial revolution as today’s entrepreneurs, using open source design and 3-D printing, bring manufacturing to the desktop.  ",
+  "Chirs Adnerson",
+  "2012", 
+  "4", 
+  "978-0-307-72097-9", 
+  "https://www.amazon.com/Makers-Industrial-Revolution-Chris-Anderson/dp/0307720969/ref=sr_1_1?ie=UTF8&qid=1540867602&sr=8-1&keywords=Makers+chris+anderson", 
+  3,
+  "A visionary review if the next technological revolution.");
 bookShelf.bookCollection.push(seedBook1);
+
 // book #2
 bookIdCount++;
-let seedBook2 = new Book(bookIdCount, "book2", "general", "this is a large explanation about is book #2", "John Doe", "1820", "3", "435-234", "www.google.com", 45,"");
-seedBook2.updateComment("This is a personal comment on book#2");
+let seedBook2 = new Book(
+  bookIdCount, 
+  "We have no idea", 
+  "Science", 
+  "Humanity's understanding of the physical world is full of gaps. Not tiny little gaps you can safely ignore —there are huge yawning voids in our basic notions of how the world works. PHD Comics creator Jorge Cham and particle physicist Daniel Whiteson have teamed up to explore everything we don't know about the universe.", 
+  "Jorge Cham & Daniel Whiteson", 
+  "2017", 
+  "3", 
+  "9780735211320", 
+  "https://www.amazon.com/We-Have-No-Idea-Universe/dp/0735211515/ref=sr_1_1?ie=UTF8&qid=1540868015&sr=8-1&keywords=We+have+no+idea", 
+  45, 
+  "It turns out the universe is full of weird things that don't make any sense.");
 bookShelf.bookCollection.push(seedBook2);
 
 // Export bookShelf

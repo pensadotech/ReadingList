@@ -99,7 +99,7 @@ const ViewPage = (props) => {
                             <p className="card-text">URL :</p>
                           </div>
                           <div className="col-sm-8 bookCardSectionData">
-                            {<a href={props.bookshelfObj.selectedBook.url}>{props.bookshelfObj.selectedBook.url}</a>}
+                            {<a href={props.bookshelfObj.selectedBook.url} target="_blank">{props.bookshelfObj.selectedBook.url}</a>}
                           </div>
                         </div>
                       </div>
