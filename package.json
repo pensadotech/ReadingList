@@ -1,0 +1,28 @@
+{
+  "name": "ReadingList",
+  "version": "1.0.0",
+  "description": "by Armando Pensado",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pensadotech/ReadingList.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pensadotech/ReadingList/issues"
+  },
+  "homepage": "https://github.com/pensadotech/ReadingList#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-react-views": "^0.10.5",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
+  }
+}
